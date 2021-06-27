@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="{% static 'landing/css/styleadmin.css' %}">
+  <link href="{% static 'landing/images/adminimg/icon/541-5415332_login-logos-sign-in-logo-transparent-hd-png.png' %}" rel="icon">
+  <link href="{% static 'landing/images/adminimg/icon/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    
+
+</head>
+
+<body>
+ 
+  <!-- partial:index.partial.html -->
+  <div class="page">
+    <!-- <h1>Admin Panel</h1> -->
+    <div class="container">
+      <div class="left">
+        <div class="login">SignIn</div>
+        <div class="eula">In here,You have a Admin Login to sign in the panel<br><br>
+          <form class="form-inline">
+            <a href="{% url 'register' %}"><button type="button" id="btn">Signup</button></a>
+            <a href="{% url 'index' %}"><button type="button" id="btn">Home</button></a>
+          </form>
+        </div>
+
+      </div>
+      <div class="right">
+        <svg viewBox="0 0 320 300">
+          <defs>
+            <linearGradient 
+                           inkscape:collect="always" 
+                           id="linearGradient" 
+                           x1="13" 
+                           y1="193.49992" 
+                           x2="307" 
+                           y2="193.49992"
+                          gradientUnits="userSpaceOnUse">
+              <stop 
+                  style="stop-color:#ff7300;" 
+                  offset="0" id="stop876" 
+                  />
+              <stop style="stop-color:#66ff00;" offset="1" id="stop878" />
+            </linearGradient>
+          </defs>
+          <path
+            d="m 40,120.00016 239.99984,-3.2e-4 c 0,0 24.99263,0.79932 25.00016,35.00016 0.008,34.20084 -25.00016,35 -25.00016,35 h -239.99984 c 0,-0.0205 -25,4.01348 -25,38.5 0,34.48652 25,38.5 25,38.5 h 215 c 0,0 20,-0.99604 20,-25 0,-24.00396 -20,-25 -20,-25 h -190 c 0,0 -20,1.71033 -20,25 0,24.00396 20,25 20,25 h 168.57143" />
+        </svg>
+        <div class="form" aria-required="true">
+          <form action="/admin_index" method="POST">
+            {% csrf_token %}
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+            <input type="submit" id="submit" value="Submit">
+          </form>
+          <h5 style="color: rgb(255, 132, 0);">{{msg}}</h5>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<script src="{% static 'landing/js/script.js' %}"></script>
+</body>
+ 
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js'></script>
+  <script src="{% static 'landing/js/script.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  setTimeout(function(){
+    $('.loading').fadeToggle();
+  }, 1500);
+</script>
+</body>
+</html>

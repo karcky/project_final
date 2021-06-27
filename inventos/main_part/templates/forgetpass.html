@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <meta name=description content="">
+        <meta name=author content="">
+
+        <title>email pass!!!!</title>
+        
+        <link rel="stylesheet" href="{% static 'landing/css/stylefor.css'%}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" 
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+        
+    </head>
+    <body>
+        
+        
+        <div class="main">
+            <h2>Forget Password</h2>
+            
+             <div class="form-container">
+                <a href="{% url 'Signup' %}" class="close"><i class="far fa-times-circle"></i></a>
+                 <form action="#" method="POST" class="form-wrap">
+                     {% csrf_token %}
+                    
+                 <div class="form-box">
+                              
+                           <input type="text" placeholder="Enter Email" required>
+                    
+                 </div>
+                 <div class="form-submit">
+                           <input type="submit" value="Send">
+                 </div>
+                </form>
+             </div>
+        </div>    
+
+    </body>
+</html>

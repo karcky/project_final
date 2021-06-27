@@ -1,0 +1,533 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from thememinister.com/Worksbot/theme/Worksbot_v2.0/charts_am' %} by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Feb 2021 09:46:30 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Worksbot</title>
+    <link href="{% static 'landing/images/adminimg/icon/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <link href="{% static 'landing/images/icon/tick1.jpg' %}" rel="icon">
+    
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i', 'Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i', 'Open Sans']
+            }
+        });
+    </script>
+    <!-- START GLOBAL MANDATORY STYLE -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link href="{% static 'dashboard/assets/dist/css/base.css' %}" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- START PAGE LABEL PLUGINS -->
+    <link href="{% static 'dashboard/assets/plugins/amcharts/export.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'dashboard/assets/plugins/datatables/dataTables.min.css' %}" rel="stylesheet" type="text/css"/>
+    <!-- START THEME LAYOUT STYLE -->
+    <link href="{% static 'dashboard/assets/dist/css/component_ui.min.css' %}" rel="stylesheet" type="text/css" />
+    <link id="defaultTheme" href="{% static 'dashboard/assets/dist/css/skins/skin-dark-1.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'dashboard/assets/dist/css/custom.css' %}" rel="stylesheet" type="text/css" />
+    <!-- HTML5 Shim and Respond.js' %} IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js' %} doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]-->
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js' %}/1.4.2/respond.min.js"></script>
+    <!--[endif]-->
+</head>
+
+<body>
+    <div id="wrapper" class="wrapper animsition">
+        <!-- Navigation -->
+        <nav class="navbar navbar-fixed-top">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="material-icons">apps</i>
+                </button>
+                <a class="navbar-brand" href="{% url 'dashboardindex' %}">
+                    <img class="main-logo" src="{% static 'dashboard/assets/dist/img/ico/i-logo.png' %}" alt="">
+                    <!--<span>Worksbot</span>-->
+                </a>
+            </div>
+            <div class="nav-container">
+                <ul class="nav navbar-nav hidden-xs">
+                    <h1>Admin Panel</h1>
+                </ul>
+                <ul class="nav navbar-top-links navbar-right">
+
+                    <li class="log_out">
+                        <a href="{% url 'logout' %}">
+                            <i class="material-icons">power_settings_new</i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <!-- /.Navigation -->
+        <div class="sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-heading "> </li>
+                    <li><a href="{% url 'dashboardindex' %}" class="material-ripple"><i class="material-icons">home</i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#" class="material-ripple"><i class="glyphicon glyphicon-user"></i> User
+                            Management<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="{% url 'UserManagementView' %}">User</a></li>
+                            <li><a href="{% url 'group' %}">Group</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="material-ripple"><i
+                                class="glyphicon glyphicon-shopping-cart"></i>Product<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="{% url 'categorylist' %}">Category</a></li>
+                            <li><a href="{% url 'unitlist' %}">Unit</a></li>
+                            <li><a href="{% url 'brand' %}">Brand</a></li>
+                            <li><a href="{% url 'taxlist' %}">Tax</a></li>
+                            <li><a href="{% url 'productadd' %}">Add Product</a></li>
+                            <li><a href="#{% url 'customer' %}">Customer</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'quotationsadd' %}" class="material-ripple"><i
+                                class="material-icons">bubble_chart</i>Quotation</a>
+
+                    </li>
+                    <li>
+                        <a href="{% url 'customer' %}" class="material-ripple"><i class="material-icons">insert_emoticon</i>Customer</a>
+
+                    </li>
+                    <li>
+                        <a href="{% url 'pos' %}" class="material-ripple"><i class="material-icons">widgets</i>POS</a>
+
+                    </li>
+                    <li>
+                        <a href="{% url 'saleslistpos' %}" class="material-ripple"><i class="material-icons">invert_colors</i>Sales
+                            List(POS)</a>
+
+                    </li>
+                    <li>
+                        <a href="#" class="material-ripple"><i class="material-icons">drafts</i>Purchase<span
+                                class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="{% url 'purchaselist' %}">Purchase List</a></li>
+                            <li><a href="{% url 'purchaseadd' %}">Create Purchase</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'expenses' %}" class="material-ripple"><i class="material-icons">business</i>Expenses</a>
+
+                    </li>
+                    <li>
+                        <a href="#" class="material-ripple"><i class="material-icons">assignment</i>Stock Transfer<span
+                                class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="{% url 'stock_transfer_list' %}">Stock List</a></li>
+                            <li><a href="{% url 'stock_tranfer_add' %}">Add Stock Transfer</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="material-ripple"><i class="material-icons">format_color_fill</i>Stock
+                            Adjustment<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="{% url 'stockadjustment' %}">Stock Adjustment</a></li>
+                            <li><a href="{% url 'addstockadjustment' %}">Add Stock Adjustment</a></li>
+                            <li><a href="{% url 'sales_list' %}">Return Product</a></li>
+                            <li><a href="{% url 'return_product' %}">Return Product List</a></li>
+
+                        </ul>
+                    </li>
+                    </li>
+                    <li>
+                        <a href="{% url 'report' %}" class="material-ripple"><i class="material-icons">map</i> Report</a>
+
+                    </li>
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.Left Sidebar-->
+        <div class="side-bar right-bar">
+            <div class="">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs right-sidebar-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                            data-toggle="tab"><i class="material-icons">home</i></a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i
+                                class="material-icons">person_add</i></a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><i
+                                class="material-icons">chat</i></a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade  in active" id="home">
+                        <ul id="styleOptions" title="switch styling">
+                            <li><b>Dark Skin</b></li>
+                            <li><a href="javascript: void(0)" data-theme="skin-blue.min"><img
+                                        src="{% static 'dashboard/assets/dist/img/theme-color/1.jpg' %}" alt="" /></a>
+                            </li>
+                            <li><a href="javascript: void(0)" data-theme="skin-dark.min"><img
+                                        src="{% static 'dashboard/assets/dist/img/theme-color/2.jpg' %}" alt="" /></a>
+                            </li>
+                            <li><a href="javascript: void(0)" data-theme="skin-red-light.min" class="skin-logo"><img
+                                        src="{% static 'dashboard/assets/dist/img/theme-color/5.jpg' %}" alt="" /></a>
+                            </li>
+                            <li><b>Dark Skin sidebar</b></li>
+                            <li><a href="javascript: void(0)" data-theme="skin-default.min"><img
+                                        src="{% static 'dashboard/assets/dist/img/theme-color/7.jpg' %}" alt="" /> </a>
+                            </li>
+                            <li><a href="javascript: void(0)" data-theme="skin-red-dark.min"><img
+                                        src="{% static 'dashboard/assets/dist/img/theme-color/6.jpg' %}" alt="" /></a>
+                            </li>
+                            <li><a href="javascript: void(0)" data-theme="skin-dark-1.min"><img
+                                        src="{% static 'dashboard/assets/dist/img/theme-color/8.jpg' %}" alt="" /></a>
+                            </li>
+                            <li><b>Light Skin sidebar</b></li>
+                            <li><a href="javascript: void(0)" data-theme="skin-default-light.min" class="skin-logo"><img
+                                        src="{% static 'dashboard/assets/dist/img/theme-color/3.jpg' %}" alt="" /></a>
+                            </li>
+                            <li><a href="javascript: void(0)" data-theme="skin-white.min"><img
+                                        src="{% static 'dashboard/assets/dist/img/theme-color/4.jpg' %}" alt="" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade " id="profile">
+                        <h3 class="sidebar-heading">Activity</h3>
+                        <div class="rad-activity-body">
+                            <div class="rad-list-group group">
+                                <a href="#" class="rad-list-group-item">
+                                    <div class="rad-list-icon bg-red pull-left"><i class="fa fa-phone"></i></div>
+                                    <div class="rad-list-content"><strong>Client meeting</strong>
+                                        <div class="md-text">Meeting at 10:00 AM</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="rad-list-group-item">
+                                    <div class="rad-list-icon bg-yellow pull-left"><i class="fa fa-refresh"></i></div>
+                                    <div class="rad-list-content"><strong>Created ticket</strong>
+                                        <div class="md-text">Ticket assigned to Dev team</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="rad-list-group-item">
+                                    <div class="rad-list-icon bg-primary pull-left"><i class="fa fa-check"></i></div>
+                                    <div class="rad-list-content"><strong>Activity completed</strong>
+                                        <div class="md-text">Completed the dashboard html</div>
+                                    </div>
+                                </a>
+                                <a href="#" class="rad-list-group-item">
+                                    <div class="rad-list-icon bg-green pull-left"><i class="fa fa-envelope"></i></div>
+                                    <div class="rad-list-content"><strong>New Invitation</strong>
+                                        <div class="md-text">Max has invited you to join Inbox</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- /.sidebar-menu -->
+                        <h3 class="sidebar-heading">Tasks Progress</h3>
+                        <ul class="sidebar-menu">
+                            <li>
+                                <a href="#">
+                                    <h4 class="subheading">
+                                        Task one
+                                        <span class="label label-danger pull-right">40%</span>
+                                    </h4>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-danger progress-bar-striped active"
+                                            style="width: 40%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h4 class="subheading">
+                                        Task two
+                                        <span class="label label-success pull-right">20%</span>
+                                    </h4>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-success progress-bar-striped active"
+                                            style="width: 20%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h4 class="subheading">
+                                        Task Three
+                                        <span class="label label-warning pull-right">60%</span>
+                                    </h4>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-warning progress-bar-striped active"
+                                            style="width: 60%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <h4 class="subheading">
+                                        Task four
+                                        <span class="label label-primary pull-right">80%</span>
+                                    </h4>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-primary progress-bar-striped active"
+                                            style="width: 80%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- /.sidebar-menu -->
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade " id="messages">
+                        <div class="message_widgets">
+                            <a href="#">
+                                <div class="inbox-item">
+                                    <div class="inbox-item-img"><img
+                                            src="{% static 'dashboard/assets/dist/img/avatar.png' %}" class="img-circle"
+                                            alt=""></div>
+                                    <strong class="inbox-item-author">Naeem Khan</strong>
+                                    <span class="inbox-item-date">-13:40 PM</span>
+                                    <p class="inbox-item-text">Hey! there I'm available...</p>
+                                    <span class="profile-status available pull-right"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="inbox-item">
+                                    <div class="inbox-item-img"><img
+                                            src="{% static 'dashboard/assets/dist/img/avatar2.png' %}" class="img-circle"
+                                            alt=""></div>
+                                    <strong class="inbox-item-author">Sala Uddin</strong>
+                                    <span class="inbox-item-date">-13:40 PM</span>
+                                    <p class="inbox-item-text">Hey! there I'm available...</p>
+                                    <span class="profile-status away pull-right"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="inbox-item">
+                                    <div class="inbox-item-img"><img
+                                            src="{% static 'dashboard/assets/dist/img/avatar3.png' %}" class="img-circle"
+                                            alt=""></div>
+                                    <strong class="inbox-item-author">Mozammel</strong>
+                                    <span class="inbox-item-date">-13:40 PM</span>
+                                    <p class="inbox-item-text">Hey! there I'm available...</p>
+                                    <span class="profile-status busy pull-right"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="inbox-item">
+                                    <div class="inbox-item-img"><img
+                                            src="{% static 'dashboard/assets/dist/img/avatar4.png' %}" class="img-circle"
+                                            alt=""></div>
+                                    <strong class="inbox-item-author">Tanzil</strong>
+                                    <span class="inbox-item-date">-13:40 PM</span>
+                                    <p class="inbox-item-text">Hey! there I'm available...</p>
+                                    <span class="profile-status offline pull-right"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="inbox-item">
+                                    <div class="inbox-item-img"><img
+                                            src="{% static 'dashboard/assets/dist/img/avatar5.png' %}" class="img-circle"
+                                            alt=""></div>
+                                    <strong class="inbox-item-author">Amir Khan</strong>
+                                    <span class="inbox-item-date">-13:40 PM</span>
+                                    <p class="inbox-item-text">Hey! there I'm available...</p>
+                                    <span class="profile-status available pull-right"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="inbox-item">
+                                    <div class="inbox-item-img"><img
+                                            src="{% static 'dashboard/assets/dist/img/avatar.png' %}" class="img-circle"
+                                            alt=""></div>
+                                    <strong class="inbox-item-author">Salman Khan</strong>
+                                    <span class="inbox-item-date">-13:40 PM</span>
+                                    <p class="inbox-item-text">Hey! there I'm available...</p>
+                                    <span class="profile-status available pull-right"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="inbox-item">
+                                    <div class="inbox-item-img"><img
+                                            src="{% static 'dashboard/assets/dist/img/avatar.png' %}" class="img-circle"
+                                            alt=""></div>
+                                    <strong class="inbox-item-author">Tahamina</strong>
+                                    <span class="inbox-item-date">-13:40 PM</span>
+                                    <p class="inbox-item-text">Hey! there I'm available...</p>
+                                    <span class="profile-status available pull-right"></span>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="inbox-item">
+                                    <div class="inbox-item-img"><img
+                                            src="{% static 'dashboard/assets/dist/img/avatar4.png' %}" class="img-circle"
+                                            alt=""></div>
+                                    <strong class="inbox-item-author">Jhon</strong>
+                                    <span class="inbox-item-date">-13:40 PM</span>
+                                    <p class="inbox-item-text">Hey! there I'm available...</p>
+                                    <span class="profile-status offline pull-right"></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.Right Sidebar -->
+        <!-- /.Navbar  Static Side -->
+        <div class="control-sidebar-bg"></div>
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <!-- main content -->
+            <div class="content">
+                <!-- Content Header (Page header) -->
+                <div class="content-header hidden-xs">
+                    
+                </div> <!-- /. Content Header (Page header) -->
+                <form>
+                    <div class="row">
+                        
+                        <div class="col-sm-12">
+                            <div class="panel panel-bd ">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        <div class="row">
+                                            <div class="col-md-12 bg-light text-right">
+                                                <h4 class="pull-left p-5">User List</h4>
+                                                <div class="form-inline my-2 my-lg-0">
+                                                    
+                                                  
+
+
+                                                    <a href="{% url 'UserManagementAdd' %}"><button type="button" class="btn btn-violet" data-toggle="modal" data-target="#form"><i class="fas fa-plus"></i>Add New User</button></a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table id="dataTableExample2" class="table table-bordered table-striped table-hover">
+                                            
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Name</th>
+                                                    <th>Groups </th>
+                                                    <th>Action</th>
+
+                                                </tr>
+                                            </thead>
+                                            
+                                            <tbody>
+                                                {% for k in products %}
+                                                <tr>
+                                                    <td>{{k.id}}
+                                                        
+                                                    </td>
+                                                    <td>Name:{{k.names}}
+                                                        <br>
+                                                        Email:{{k.email}}
+                                                    </td>
+                                                    <td><span class="label label-success m-r-15">{{k.selectgroup}}</span></td>
+                                                    <td>
+                                                        <div class="dropdown">
+                                                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                <i class="fa fa-ellipsis-h" aria-hidden="true" style="color: black; text-align: center;"></i>
+                                                            </a>
+                                                            <ul class="dropdown-menu dropdown-user">
+                                                                <li><a href="edit_user/{{k.id}}"><i class="fa fa-pencil"
+                                                                            aria-hidden="true"></i>&nbsp; Edit</a></li>
+                                                                <li><a href="showing/{{k.id}}"><i class="fa fa-eye"
+                                                                            aria-hidden="true"></i>&nbsp; Show</a></li>
+                                                                <li><a href="delete/{{k.id}}"><i class="fa fa-trash-o"
+                                                                            aria-hidden="true"></i>&nbsp; Delete</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                    
+
+                                                </tr> 
+                                                {% endfor %}    
+                                            </tbody>
+                                            
+                                        </table>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div> <!-- /.main content -->
+        </div><!-- /#page-wrapper -->
+    </div><!-- /#wrapper -->
+    <!-- START CORE PLUGINS -->
+    
+    <script src="{% static 'dashboard/assets/plugins/jQuery/jquery-1.12.4.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/jquery-ui-1.12.1/jquery-ui.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/metisMenu/metisMenu.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/lobipanel/lobipanel.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/animsition/js/animsition.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/fastclick/fastclick.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/slimScroll/jquery.slimscroll.min.js' %}"
+        type="text/javascript"></script>
+    <!-- STRAT PAGE LABEL PLUGINS -->
+    <script src="{% static 'dashboard/assets/plugins/amcharts/amcharts.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/amcharts/ammap.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/amcharts/worldLow.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/amcharts/serial.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/amcharts/export.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/amcharts/light.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/amcharts/pie.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/amcharts/amstock.js' %}" type="text/javascript"></script>
+    <!-- STRAT PAGE LABEL PLUGINS -->
+    
+    <!-- START THEME LABEL SCRIPT -->
+    <script src="{% static 'dashboard/assets/dist/js/app.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/dist/js/jQuery.style.switcher.min.js' %}" type="text/javascript"></script>
+
+    <script src="{% static 'dashboard/assets/plugins/datatables/dataTables.min.js' %}" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+
+            "use strict"; // Start of use strict
+
+            $("#dataTableExample2").DataTable({
+                dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                buttons: [
+                    {extend: 'copy', className: 'btn-sm'},
+                    {extend: 'csv', title: 'ExampleFile', className: 'btn-sm'},
+                    {extend: 'excel', title: 'ExampleFile', className: 'btn-sm'},
+                    {extend: 'pdf', title: 'ExampleFile', className: 'btn-sm'},
+                    {extend: 'print', className: 'btn-sm'}
+                ]
+            });
+
+        });
+    </script>
+    
+   
+
+
+
+    
+  
+   
+   
+    
+</body>
+</html>

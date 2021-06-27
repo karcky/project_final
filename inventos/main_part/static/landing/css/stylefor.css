@@ -1,0 +1,104 @@
+/* forgot password*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Itim&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Roboto:wght@100&display=swap');
+
+ body{
+	background:rgb(119, 119, 119);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+ }
+ h1{
+	color: rgb(255, 255, 255); 
+	font-family: 'Dancing Script', cursive;
+    padding-left: 390px;
+	
+	padding-top: 125px;
+ }
+.close{
+	color: azure;
+	font-size: 20px;
+	position: absolute;
+	right: 380px;
+	top: 170px;
+	cursor: pointer;
+	font-size: 18px;
+}
+ .main{
+	 text-align: center;
+	 width: 310px;
+	 height: 350px; 
+	 color:rgb(230, 22, 22);
+	 top: 50%;
+	 left: 50%;
+	 padding: 60px 30px;
+	 position: absolute;
+	 transform: translate(-50%,-50%);
+	 box-sizing: border-box;
+	 box-shadow: 8px 8px 50px rgb(15, 15, 15);
+ }
+ .main:before{
+	 content: '';
+	 position: absolute;
+	 top: -2px;
+	 left: -2px;
+	 right: -2px;
+	 bottom: -2px;
+	 background: #ffffff;
+	 z-index: -1;
+ }
+ .main:after{
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: #ffffff;
+	z-index: -2;
+	filter: blur(40px);
+}
+.main:before,
+.main:after{
+	background: linear-gradient(235deg,#89ff00,#060c21,#00bcd4);
+}
+ h2{
+	font-family: 'Itim', cursive;
+	font-family: 'Roboto', sans-serif;
+	color: rgb(255, 255, 255);
+	text-transform: uppercase;
+ 
+ }
+ .form-box input[type="text"]{
+	 border: 0;
+	 background: none;
+	 display: block;
+	 margin: 10px auto;
+	 text-align: center;
+	 border: 2px solid #00ff00;
+	 padding: 12px 10px;
+	 width: 200px;
+	 outline: none;
+	 color: rgb(248, 248, 248);
+	 border-radius: 24px ;
+	 transition: 0.25s;
+ }
+ .form-box input[type="text"]:focus{
+	 width: 230px; 
+	 border-color: red;
+ }
+ .form-submit input[type="submit"]{
+	 border: 0;
+	 background: none;
+	 display: block;
+	 margin: 10px auto;
+	 text-align: center;
+	 border: 2px solid  #f1f1f1;
+	 padding: 12px 10px;
+	 width: 200px;
+	 outline: none;
+	 color: rgb(255, 255, 255);
+	 border-radius: 24px ;
+	 
+ }
+ 

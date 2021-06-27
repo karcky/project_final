@@ -1,0 +1,268 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang=en>
+
+<!-- Mirrored from thememinister.com/Worksbot/theme/Worksbot_v2.0/index' %} by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Feb 2021 09:45:16 GMT -->
+
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name=description content="">
+    <meta name=author content="">
+    <title>Worksbot</title>
+    <link href="{% static 'landing/images/adminimg/icon/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    <link href="{% static 'landing/images/icon/tick1.jpg' %}" rel="icon">
+    <link rel="shortcut icon" href="{% static 'dashboard/assets/dist/img/ico/favicon.png' %}" type="image/x-icon">
+    
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i', 'Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i', 'Open Sans']
+            }
+        });
+    </script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link href="{% static 'dashboard/assets/dist/css/base.css' %}" rel=stylesheet type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'dashboard/assets/plugins/toastr/toastr.min.css' %}" rel=stylesheet type="text/css" />
+    <link href="{% static 'dashboard/assets/plugins/emojionearea/emojionearea.min.css' %}" rel=stylesheet
+        type="text/css" />
+    <link href="{% static 'dashboard/assets/plugins/monthly/monthly.min.css' %}" rel=stylesheet type="text/css" />
+    <link href="{% static 'dashboard/assets/plugins/amcharts/export.css' %}" rel=stylesheet type="text/css" />
+    <link href="{% static 'dashboard/assets/dist/css/component_ui.min.css' %}" rel=stylesheet type="text/css" />
+    <link id=defaultTheme href="{% static 'dashboard/assets/dist/css/skins/skin-dark-1.min.css' %}" rel=stylesheet
+        type="text/css" />
+    <link href="{% static 'dashboard/assets/dist/css/custom.css' %}" rel=stylesheet type="text/css" />
+    <link href="{% static 'dashboard/assets/dist/css/style.css' %}" rel=stylesheeet type="text/css" />
+
+    <link href="{% static 'dashboard/assets/dist/css/base.css' %}" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- START PAGE LABEL PLUGINS -->
+    <link href="{% static 'dashboard/assets/plugins/summernote/summernote.css' %}" rel="stylesheet" type="text/css" />
+    <!-- START THEME LAYOUT STYLE -->
+    <link href="{% static 'dashboard/assets/dist/css/component_ui.min.css' %}" rel="stylesheet" type="text/css" />
+    <link id="defaultTheme" href="{% static 'dashboard/assets/dist/css/skins/skin-dark-1.min.css' %}" rel="stylesheet"
+        type="text/css" />
+    <link href="{% static 'dashboard/assets/dist/css/custom.css' %}" rel="stylesheet" type="text/css" />
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js' %}"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js' %}/1.4.2/respond.min.js' %}"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+    <div id=wrapper class="wrapper animsition">
+        <!-- Navigation -->
+        <nav class="navbar navbar-fixed-top">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="material-icons">apps</i>
+                </button>
+                <a class="navbar-brand" href="{% url 'dashboardindex' %}">
+                    <img class="main-logo" src="{% static 'dashboard/assets/dist/img/ico/i-logo.png' %}" id="bg"
+                        alt="logo">
+                    <!--<span>Worksbot</span>-->
+                </a>
+            </div>
+            <div class="nav-container">
+                <!-- /.navbar-header -->
+                <ul class="nav navbar-nav hidden-xs">
+                    <h1>Admin Panel</h1>
+                </ul>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="log_out">
+                        <a href="{% url 'logout' %}">
+                            <i class="material-icons">power_settings_new</i>
+                        </a>
+                    </li><!-- /.Log out -->
+                </ul> <!-- /.navbar-top-links -->
+            </div>
+        </nav>
+        <!-- /.Navigation -->
+        <div class="sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+
+
+                    <li class="nav-heading "> </li>
+                    <li><a href="{% url 'dashboardindex' %}" class="material-ripple"><i class="material-icons">home</i>
+                            Dashboard</a></li>
+                    <li>
+                        <a href="#" class="material-ripple"><i class="glyphicon glyphicon-user"></i> User
+                            Management<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="{% url 'UserManagementView' %}">User</a></li>
+                            <li><a href="{% url 'group' %}">Group</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="material-ripple"><i
+                                class="glyphicon glyphicon-shopping-cart"></i>Product<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="{% url 'categorylist' %}">Category</a></li>
+                            <li><a href="{% url 'unitlist' %}">Unit</a></li>
+                            <li><a href="{% url 'brand' %}">Brand</a></li>
+                            <li><a href="{% url 'taxlist' %}">Tax</a></li>
+                            <li><a href="{% url 'productadd' %}">Add Product</a></li>
+                            <li><a href="{% url 'customer' %}">Customer</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'quotationsadd' %}" class="material-ripple"><i
+                                class="material-icons">bubble_chart</i>Quotation</a>
+
+                    </li>
+                    <li>
+                        <a href="{% url 'customer' %}" class="material-ripple"><i class="material-icons">insert_emoticon</i>Customer</a>
+
+                    </li>
+                    <li>
+                        <a href="{% url 'pos' %}" class="material-ripple"><i class="material-icons">widgets</i>POS</a>
+
+                    </li>
+                    <li>
+                        <a href="{% url 'saleslistpos' %}" class="material-ripple"><i class="material-icons">invert_colors</i>Sales
+                            List(POS)</a>
+
+                    </li>
+                    <li>
+                        <a href="#" class="material-ripple"><i class="material-icons">drafts</i>Purchase<span
+                                class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="{% url 'purchaselist' %}">Purchase List</a></li>
+                            <li><a href="{% url 'purchaseadd' %}">Create Purchase</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{% url 'expenses' %}" class="material-ripple"><i class="material-icons">business</i>Expenses</span></a>
+
+                    </li>
+                    <li>
+                        <a href="#" class="material-ripple"><i class="material-icons">assignment</i>Stock Transfer<span
+                                class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="{% url 'stock_transfer_list' %}">Stock List</a></li>
+                            <li><a href="{% url 'stock_tranfer_add' %}">Add Stock Transfer</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="material-ripple"><i class="material-icons">format_color_fill</i>Stock
+                            Adjustment<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li><a href="{% url 'stockadjustment' %}">Stock Adjustment</a></li>
+                            <li><a href="{% url 'addstockadjustment' %}">Add Stock Adjustment</a></li>
+                            <li><a href="{% url 'sales_list' %}">Return Product</a></li>
+                            <li><a href="{% url 'return_product' %}">Return Product List</a></li>
+
+                        </ul>
+                    </li>
+                    </li>
+                    <li>
+                        <a href="{% url 'report' %}" class="material-ripple"><i class="material-icons">map</i> Report</a>
+
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.Left Sidebar-->
+        <div class="control-sidebar-bg"></div>
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <!-- main content -->
+            <div class="content">
+                <!-- Content Header (Page header) -->
+                <div class="content-header hidden-xs">
+
+                </div>
+                <!-- /. Content Header (Page header) -->
+                <div class="row">
+                    
+                    <div class="col-sm-12">
+                        <div class="panel panel-bd">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+
+                                    <div class="row">
+                                        <div class="col-md-12 bg-light text-right">
+                                            <h4 class="pull-left p-5">Update Tax</h4>
+                                            <a href="{% url 'taxlist' %}"><button type="button"
+                                                class="btn btn-primary">Back</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <form action="/tax_update/{{taxes.id}}" method="POST">
+                                {% csrf_token %}
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="Name">Name</label>
+                                        <input type="text" class="form-control" name="tax_name" id="Name" value="{{taxes.tax_name}}"
+                                            placeholder="">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Rate">Rate(%)</label>
+                                        <input type="number" name="tax_rate" class="form-control" value="{{taxes.tax_rate}}" placeholder="">
+                                    </div>
+
+                                </div>
+                                <div class="modal-footer border-top-0 d-flex justify-content-right">
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- second class row -->
+        </div>
+    </div>
+
+
+
+
+
+
+    
+    <script src="{% static 'dashboard/assets/plugins/jQuery/jquery-1.12.4.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/jquery-ui-1.12.1/jquery-ui.min.js' %}"
+        type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/metisMenu/metisMenu.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/lobipanel/lobipanel.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/animsition/js/animsition.min.js' %}"
+        type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/fastclick/fastclick.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/plugins/slimScroll/jquery.slimscroll.min.js' %}"
+        type="text/javascript"></script>
+
+    <script src="{% static 'dashboard/assets/plugins/summernote/summernote.min.js' %}" type="text/javascript"></script>
+    <script>
+        setTimeout(function(){
+          if ($('#msg').length > 0){
+            $('#msg').remove();
+          }
+        },2000)
+    
+    </script>
+    <!-- START THEME LABEL SCRIPT -->
+    <script src="{% static 'dashboard/assets/dist/js/app.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'dashboard/assets/dist/js/jQuery.style.switcher.min.js' %}" type="text/javascript"></script>
+
+</body>
+
+<!-- Mirrored from thememinister.com/Worksbot/theme/Worksbot_v2.0/index' %} by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Feb 2021 09:45:46 GMT -->
+
+</html>

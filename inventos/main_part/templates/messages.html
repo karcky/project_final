@@ -1,0 +1,7 @@
+{% if messages %}
+    {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} col-sm-9" id="msg" style="border-radius: 15px 15px 15px 15px;" role="alert">
+              {{ message }}
+          </div>
+     {% endfor %}
+{% endif %}

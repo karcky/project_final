@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+
+
+
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(80deg,#0a0a30,#2e064f);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+}
+.text{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/pre/back1.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    font-family: 'Finger Paint', cursive;
+    font-size: 80px;
+    text-align: center;
+    line-height: 650px;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(-5deg);
+    color: transparent;
+    -webkit-background-clip: text;
+    pointer-events: none;
+    animation: anim6 1s infinite, anim2 10s forwards;
+
+}
+@keyframes anim6{
+    0%{background-image: url(../images/pre/back1.jpg);}
+    10%{background-image: url(../images/pre/back2.jpg);}
+    20%{background-image: url(../images/pre/back3.jpg);}
+    30%{background-image: url(../images/pre/back4.jpg);}
+    40%{background-image: url(../images/pre/back5.jpg);}
+    50%{background-image: url(../images/pre/back6.jpg);}
+    60%{background-image: url(../images/pre/back7.jpg);}
+    70%{background-image: url(../images/pre/back8.jpg);}
+    80%{background-image: url(../images/pre/back14.jpeg);}
+    90%{background-image: url(../images/pre/back13.jpg);}
+    100%{background-image: url(../images/pre/back12.jpg);}
+}
+@keyframes anim2{
+    from{color:#ff950b6d;}
+    to{color: transparent;}
+}
+.title{
+    font-family: monospace ;
+    font-size: 10px;
+    color: white;
+    letter-spacing: 5px;
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}   
+.bar{
+    width: 80px;
+    height: 2px;
+    background-color: #282246;
+    position: absolute;
+    top:60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+} 
+#fill{
+    width: 0%;
+    height: 100%;
+    background-color: white;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}

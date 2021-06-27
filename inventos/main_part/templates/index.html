@@ -1,0 +1,331 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Inventos</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="{% static 'landing/css/animate.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'landing/css/bootstrap.min.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'landing/css/style1.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'landing/css/preloader.css' %}"> -->
+  <link rel="stylesheet" href="{% static 'landing/css/prestyle.css' %}">
+  <link rel="stylesheet" href="{% static 'landing/css/text_animate.css' %}">
+  
+  
+  
+
+</head>
+
+<body>
+  <div class="main">
+    <div class="text">
+        inventos
+    </div>
+    <div class="title">
+        Worksbot_creation
+    </div>
+    <div class="bar">
+        <div id="fill">
+
+        </div>
+
+    </div>
+
+</div>
+  
+
+  </div>
+  <div class="container-fluid pl-0 pr-0 bg-img clearfix parallax-window2" data-parallax="scroll" >
+    <svg viewBox="0 0 1800 600">
+      <symbol id="s-text">
+        
+        <text text-anchor="middle"
+              x="50%"
+              y="68%"
+              class="text--line"
+              >
+         INVENTOS
+        </text>
+        
+      </symbol>
+      
+      <g class="g-ants">
+        <use xlink:href="#s-text"
+          class="webcoderskull-1"></use>     
+        <use xlink:href="#s-text"
+          class="webcoderskull-1"></use>     
+        <use xlink:href="#s-text"
+          class="webcoderskull-1"></use>     
+        <use xlink:href="#s-text"
+          class="webcoderskull-1"></use>     
+        <use xlink:href="#s-text"
+          class="webcoderskull-1"></use>     
+      </g>
+      
+      
+    </svg>
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand mr-auto" href="{% url 'admin_index' %}"><img src="{% static 'landing/images/i-logo.png' %}" alt="FoxPro" /></a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> <span
+            class="navbar-toggler-icon"></span> </button>
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"> <a class="nav-link" href="#Home">Home</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#about-us">Taxes</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="{% url 'Signup' %}">Login</a> </li>
+            <!-- <li class="nav-item"> <a class="nav-link" href="{% url 'admin_index' %}">Admin</a> </li> -->
+            <li class="nav-item"> <a class="nav-link" href="#contact">Contact</a> </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="fh5co-banner-text-box">
+        <div class="quote-box pl-5 pr-5 wow bounceInRight">
+          <h2> The process of ordering, storing <br><span>and using a company's inventory</span> </h2>
+        </div>
+        <a href="{% url 'Signup' %}" class="btn text-uppercase btn-outline-danger btn-lg mr-3 mb-3 wow bounceInUp">SIGN
+          UP</a> <a href="#" class="btn text-uppercase btn-outline-danger btn-lg mb-3 wow bounceInDown"> DEMO</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid fh5co-network">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h4 class="wow bounceInUp"></h4>
+          <h2 class="wow bounceInRight">ORDERS</h2>
+          <hr />
+          <h5 class="wow bounceInLeft">Order Management</h5>
+          <p class="wow bounceInDown">Handle all your sales and purchases activities, manage invoices and bills, and
+            track payments. Zoho Inventory also helps you monitor packages and shipments to keep your deliveries on
+            time.</p>
+        </div>
+        <div class="col-md-6">
+          <figure class="wow bounceInDown"> <img src="{% static 'landing/images/about-img.jpg' %}" alt="gym"
+              class="img-fluid" /> </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="about-us" class="container-fluid fh5co-about-us pl-0 pr-0 parallax-window" data-parallax="scroll"
+    data-image-src="{% static 'landing/images/about-us-bg.jpg' %}">
+    <div class="container">
+      <div class="col-sm-6 offset-sm-6">
+        <h2 class="wow bounceInLeft" data-wow-delay=".25s">TAXES</h2>
+        <hr />
+        <p class="wow bounceInRight" data-wow-delay=".25s">Automate tax calculation When you prepare a sales order, the
+          CGST, IGST or SGST rates get calculated automatically, saving you time and manual calculations.</p>
+        <a class="btn btn-lg btn-outline-danger d-inline-block text-center mx-auto wow bounceInDown">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid fh5co-content-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 pr-0"><img src="{% static 'landing/images/rode-gym.jpg' %}" alt="gym"
+            class="img-fluid wow bounceInLeft" /> </div>
+        <div class="col-md-7 pl-0">
+          <div class="wow bounceInRight" data-wow-delay=".25s">
+            <div class="card-img-overlay">
+              <p>Inventos is compatible with different types of barcode scanners which makes it easy to set up a barcode
+                system and add SKUs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="row trainers pl-0 pr-0">
+        <div class="col-12 bg-50">
+
+        </div>
+        <div class="col-md-6 pr-5 pl-5">
+
+
+
+        </div>
+        <div class="col-md-6 pl-5 pr-5">
+
+
+
+        </div>
+      </div>
+      <div class="row gallery">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body mb-4 wow bounceInLeft" data-wow-delay=".25s">
+              <h4 class="card-title">Inventory tracking</h4>
+              <p class="card-text">You can keep track of spare parts, saleable items, and even expiry dates with the
+                serial and batch tracking feature of Inventos.</p>
+            </div>
+            <img class="card-img-top img-fluid wow bounceInRight" data-wow-delay=".25s"
+              src="{% static 'landing/images/g1.jpg' %}" alt="Card image">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card"> <img class="card-img-top img-fluid wow bounceInUp" data-wow-delay=".25s"
+              src="{% static 'landing/images/g2.jpg' %}" alt="Card image">
+            <div class="card-body mt-4 wow bounceInDown" data-wow-delay=".25s">
+              <h4 class="card-title">Reports</h4>
+              <p class="card-text">Know your inventory aging, vendor payments, sales details and inventory valuation
+                from a range of reports which can be generated, downloaded and shared easily.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body mb-4 wow bounceInRight" data-wow-delay=".25s">
+              <h4 class="card-title">Integrations</h4>
+              <p class="card-text">Sell on Shopify or Etsy, integrate with Zoho CRM and Zoho Books, and receive payment
+                online via PayPal or Razorpay—there is a wide range of integrations to support your business.</p>
+            </div>
+            <img class="card-img-top img-fluid wow bounceInLeft" data-wow-delay=".25s"
+              src="{% static 'landing/images/g3.jpg' %}" alt="Card image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 footer1 d-flex wow bounceInLeft" data-wow-delay=".25s">
+          <div class="d-flex flex-wrap align-content-center"> <a href="#"><img
+                src="{% static 'landing/images/i-logo.png' %}" alt="logo" /></a>
+            <p>Made in India. Made for the world.</p>
+            <p>&copy; 2021 Inventos. All rights reserved.<br> Design by Inventos.</p>
+          </div>
+        </div>
+        <div class="col-md-6 footer2 wow bounceInUp" data-wow-delay=".25s" id="contact">
+          <div class="form-box">
+            <form action="/index_main" method="POST">
+              {% csrf_token %}
+              <h4>CONTACT US</h4>
+              <table class="table table-responsive d-table">
+                <tr>
+                  <td><input type="text" name="cand_name" class="form-control pl-0" placeholder="NAME" /></td>
+                  <td><input type="email" name="email" class="form-control pl-0" placeholder="EMAIL" /></td>
+                </tr>
+                <tr>
+                  <td colspan="2"></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><input type="text" name="address" class="form-control pl-0" placeholder="ADDRESS" />
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2"></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><input type="text" name="messages" class="form-control pl-0" placeholder="MESSAGES" />
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2"></td>
+                </tr>
+                <tr>
+                  <td colspan="2" class="text-center pl-0"><button type="submit" class="btn btn-dark">SEND</button></td>
+                </tr>
+              </table>
+            </form>
+          </div>
+
+        </div>
+        <div class="col-md-3 footer3 wow bounceInRight" data-wow-delay=".25s">
+          
+          <h5>ADDRESS</h5>
+          <p>Chennai.</p>
+          <h5>PHONE</h5>
+          <p>9876543210</p>
+          <h5>EMAIL</h5>
+          <p>inventos@example.com</p>
+          <div class="social-links">
+            <ul class="nav nav-item">
+              <li><a href="#" class="btn btn-secondary mr-1 mb-2"><i class="fab fa-facebook-f"
+                    style="color: black;"></i></a></li>
+              <li><a href="#" class="btn btn-secondary mr-1 ml-1 mb-2"><i class="fab fa-instagram"
+                    style="color: black;"></i></a></li>
+              <li><a href="#" class="btn btn-secondary mr-1 ml-1 mb-2"><i class="fab fa-google-plus-g"
+                    style="color: black;"></i></a></li>
+              <li><a href="#" class="btn btn-secondary ml-1 mb-2"><i class="fab fa-github"
+                    style="color: black;"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Bootstrap JS, ... -->
+
+  <script src="{% static 'landing/js/jquery.min.js' %}"></script>
+  <script src="{% static 'landing/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'landing/js/parallax.js' %}"></script>
+  <script src="{% static 'landing/js/wow.js' %}"></script>
+  <script src="{% static 'landing/js/main.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>      
+  
+  <script type="text/javascript">
+    var progress = 0;
+    document.onreadystatechange = function()
+    {
+
+        if(document.readyState == 'interactive')
+
+        {
+            var allElement = $("*");
+            var length = allElement.length;
+            for(var i=0;i<length;i++)
+            {
+                set_element(allElement[i],length);
+            } 
+        
+        }
+    }
+    function  set_element(element,totalElement)
+    {
+
+        var percentage = 100 / totalElement;
+        if($(element).length==1)
+        {
+            $("#fill").animate({width:progress+percentage+"%"},5,function()
+            {
+
+                if(document.getElementById("fill").style.width=="100%")
+                {
+                    $(".main").fadeOut(500);
+                }
+
+       
+            });
+            progress = progress + percentage;
+        }
+    }
+
+</script>
+
+
+</body>
+
+</html>

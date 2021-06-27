@@ -1,0 +1,131 @@
+.loading{
+    background: rgb(255, 254, 253);
+    position: fixed;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+}
+
+
+.nest5 {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 50px;
+    width: 50px;
+    margin: -25px 0 0 -25px;
+    border: 2px solid transparent;
+    border-top-color: #008744;
+    border-radius: 50%;
+    -webkit-animation: spin11 2s linear infinite;
+            animation: spin11 2s linear infinite;
+  }
+  
+.nest5:before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    bottom: 7px;
+    left: 7px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    border-top-color: #d62d20;
+    -webkit-animation: spin11 3s linear infinite;
+            animation: spin11 3s linear infinite;
+}
+  
+.nest5:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    border-top-color: #ffa700;
+    -webkit-animation: spin11 1.5s linear infinite;
+            animation: spin11 1.5s linear infinite;
+}
+  
+  @-webkit-keyframes spin11 {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(359deg);
+              transform: rotate(359deg);
+    }
+}
+  @keyframes spin11 {
+    from {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(359deg);
+              transform: rotate(359deg);
+      -webkit-transform: rotate(359deg);
+              transform: rotate(359deg);
+    }
+}
+
+
+
+
+.loader{
+    border: 0 solid transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+
+}
+.loader:before , .loader:after{
+    content: '';
+    border: lem solid orange;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+
+
+} 
+.loader:before{
+    animation-delay: .5s;
+
+}
+@keyframes loader{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
